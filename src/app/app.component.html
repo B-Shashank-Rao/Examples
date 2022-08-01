@@ -1,0 +1,37 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<h1 [style.color]="color">This is style binding</h1>
+<div [class] = "myclass">Hello , This is an example of class binding</div>
+
+<button (click)="show()">Show</button><br>
+<h2 *ngIf="hide" [style.color]="color">This is ngif directive</h2><br>
+
+<input [(ngModel)]="title" type="text" required>
+
+<p>Binding : {{title}}</p>
+
+<br>
+<app-fav (childdata)="message=$event"
+[parentdata]="title">
+  <button (click)="show()">Show</button><br>
+  <p *ngIf="hide">This is an example of ng-content </p>
+</app-fav>
+<br>
+<p>{{message}}</p>
+
+
+
+<!-- <input #myinput type ="text" (keyup)="display(myinput)">
+<button (click)="display(myinput)">Display</button>
+<h3>{{myinput.value}}</h3> -->
+<i class="fa fa-heart-o" (click)="fill()" *ngIf="!flag" [style.font-size]="'50px'"></i>
+<i class="fa fa-heart" (click) ="fill()" *ngIf ="flag" [style.color]="bgcolor"  [style.font-size]="'50px'"></i>
+<!-- <button class ="fill"(click)="fill()">Fill</button> -->
+
+<router-outlet></router-outlet>
